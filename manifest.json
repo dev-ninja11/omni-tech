@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Tech Test",
+  "version": "0.0.1",
+  "description": "Tech Test extension for Omniplex Learning",
+  "author": "Omniplex Learning",
+  "icons": {
+    "16": "images/icons/icon_content_16.png",
+    "24": "images/icons/icon_content_24.png",
+    "32": "images/icons/icon_content_32.png",
+    "48": "images/icons/icon_content_48.png",
+    "128": "images/icons/icon_content_128.png"
+  },
+  "permissions": [],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "Launch the assistant"
+  }
+}
